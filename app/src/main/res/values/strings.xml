@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Makhārij al-Hurūf</string>
+    <string name="bcsf18m010">BCSF18M010</string>
+    <string name="muhammad_junaid">MUHAMMAD JUNAID</string>
+    <string name="move_to_repo">Move to Repo</string>
+    <string name="move_to_app">Move to App</string>
+    <string name="repoimage">repoImage</string>
+</resources>
