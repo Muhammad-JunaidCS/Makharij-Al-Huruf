@@ -11,7 +11,7 @@
     <string name="halqiyah">Halqiyah</string>
     <string name="lisaveyah">Lisaveyah</string>
     <string name="ghunna">Ghunna</string>
-    <string name="lahatiyah">Lahatiyah</string>
+    <string name="Lahatiyah">LAHATIYAH</string>
     <string name="tarfiyah">Tarfiyah</string>
     <string name="shajariyah_haafiyah">Shajariyah-Haafiyah</string>
     <string name="nit_eeyah">Nit-eeyah</string>
@@ -24,4 +24,9 @@
     <string name="middle_of_throat">Middle of Throat</string>
     <string name="ghain_khaah">غ خ</string>
     <string name="start_of_throat">Start of Throat</string>
+    <string name="lahatiyah">Lahatiyah</string>
+    <string name="kaaf">ق</string>
+    <string name="base_of_tongue_which_nis_near_uvula_touching_nthe_mouth_of_roof_n">Base of Tongue which\nis near Uvula touching\nthe mouth of roof\n</string>
+    <string name="kaah">ک</string>
+    <string name="portion_of_tongue_near_nits_base_touching_the_nroof_of_mouth_n">Portion of Tongue near\nits base touching the\nroof of mouth\n</string>
 </resources>
