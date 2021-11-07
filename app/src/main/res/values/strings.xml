@@ -8,4 +8,11 @@
     <string name="learn">Learn</string>
     <string name="practice">Practice</string>
     <string name="test">Test</string>
+    <string name="halqiyah">Halqiyah</string>
+    <string name="lisaveyah">Lisaveyah</string>
+    <string name="ghunna">Ghunna</string>
+    <string name="lahatiyah">Lahatiyah</string>
+    <string name="tarfiyah">Tarfiyah</string>
+    <string name="shajariyah_haafiyah">Shajariyah-Haafiyah</string>
+    <string name="nit_eeyah">Nit-eeyah</string>
 </resources>

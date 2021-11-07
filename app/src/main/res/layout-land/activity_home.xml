@@ -10,10 +10,10 @@
       android:id="@+id/learn"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="84dp"
+      android:layout_marginTop="100dp"
       android:text="@string/learn"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintEnd_toStartOf="@+id/practice"
+      app:layout_constraintHorizontal_bias="0.502"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,22 +21,22 @@
       android:id="@+id/practice"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="80dp"
+      android:layout_marginTop="100dp"
       android:text="@string/practice"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintHorizontal_bias="0.728"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/learn" />
+      app:layout_constraintTop_toTopOf="parent" />
 
   <Button
       android:id="@+id/test"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="80dp"
+      android:layout_marginTop="64dp"
       android:text="@string/test"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/practice"
+      app:layout_constraintHorizontal_bias="0.526"
+      app:layout_constraintStart_toEndOf="@+id/learn"
       app:layout_constraintTop_toBottomOf="@+id/practice" />
 
   <androidx.constraintlayout.widget.Group

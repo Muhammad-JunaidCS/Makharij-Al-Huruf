@@ -10,10 +10,9 @@
         android:id="@+id/halqiyah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:text="@string/halqiyah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/niteeyah"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/lahatiyah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/lisaveyah"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/halqiyah" />
 
@@ -35,9 +34,9 @@
         android:layout_marginTop="24dp"
         android:text="@string/shajariyah_haafiyah"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lahatiyah" />
+        app:layout_constraintTop_toBottomOf="@+id/ghunna" />
 
     <Button
         android:id="@+id/tarfiyah"
@@ -45,21 +44,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/tarfiyah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/ghunna"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/haafiyah" />
+        app:layout_constraintTop_toBottomOf="@+id/lahatiyah" />
 
     <Button
         android:id="@+id/niteeyah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="@string/nit_eeyah"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tarfiyah" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/lisaveyah"
@@ -68,7 +67,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/lisaveyah"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/niteeyah" />
 
@@ -79,7 +78,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/ghunna"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lisaveyah" />
 </androidx.constraintlayout.widget.ConstraintLayout>
