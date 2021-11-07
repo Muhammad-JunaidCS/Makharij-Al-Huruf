@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId())
-//        {
-//            case R.id.button:
-//                Intent intent = new Intent();
-//        }
         if(v.getId()==R.id.button)
         {
-            openWebPage("https://github.com/Muhammad-JunaidCS/Zakkat-Calculator-App");
+            openWebPage("https://github.com/Muhammad-JunaidCS/Makharij-Al-Huruf");
+        }
+        if(v.getId()==R.id.button2)
+        {
+            Intent intent = new Intent(this,HomeActivity.class);
+            startActivity(intent);
         }
     }
     public void openWebPage(String url)

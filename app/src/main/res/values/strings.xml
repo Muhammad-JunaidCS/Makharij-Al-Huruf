@@ -5,4 +5,7 @@
     <string name="move_to_repo">Move to Repo</string>
     <string name="move_to_app">Move to App</string>
     <string name="repoimage">repoImage</string>
+    <string name="learn">Learn</string>
+    <string name="practice">Practice</string>
+    <string name="test">Test</string>
 </resources>
