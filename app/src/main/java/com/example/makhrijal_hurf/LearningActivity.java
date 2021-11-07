@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class LearningActivity extends AppCompatActivity implements View.OnClickListener{
-    Button halqiyahButton,lahatiyahButton,haafiyahButton,tarfiyahButton;
+    Button halqiyahButton,lahatiyahButton,haafiyahButton,tarfiyahButton,niteeyahButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,8 @@ public class LearningActivity extends AppCompatActivity implements View.OnClickL
         haafiyahButton.setOnClickListener(this);
         tarfiyahButton=findViewById(R.id.tarfiyah);
         tarfiyahButton.setOnClickListener(this);
+        niteeyahButton=findViewById(R.id.niteeyah);
+        niteeyahButton.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -41,6 +43,10 @@ public class LearningActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tarfiyah:
                 intent = new Intent(this,TarfiyahActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.niteeyah:
+                intent = new Intent(this,Nit_EeyahActivity.class);
                 startActivity(intent);
                 break;
             default:
