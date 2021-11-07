@@ -16,4 +16,12 @@
     <string name="shajariyah_haafiyah">Shajariyah-Haafiyah</string>
     <string name="nit_eeyah">Nit-eeyah</string>
     <string name="Halqiyah">HALQIYAH</string>
+    <string name="arabic_letters">Arabic Letters</string>
+    <string name="ain_haah">ع ح</string>
+    <string name="end_of_throat">End of Throat</string>
+    <string name="alif_hamza">أ ہ</string>
+    <string name="sound_produced_nfrom">Sound Produced\nFrom</string>
+    <string name="middle_of_throat">Middle of Throat</string>
+    <string name="ghain_khaah">غ خ</string>
+    <string name="start_of_throat">Start of Throat</string>
 </resources>

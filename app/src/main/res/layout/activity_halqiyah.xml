@@ -12,7 +12,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textView"
@@ -31,16 +31,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Arabic Letters"
+                    android:text="@string/arabic_letters"
                     android:textSize="25sp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sound Produced\nFrom"
+                    android:text="@string/sound_produced_nfrom"
                     android:textSize="25sp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -51,15 +51,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="أ ہ"
+                    android:text="@string/alif_hamza"
                     android:textSize="30sp"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginStart="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="End of Throat"
+                    android:text="@string/end_of_throat"
                     android:textSize="20sp"
-                    android:layout_marginLeft="140dp"/>
+                    android:layout_marginStart="140dp"/>
 
             </LinearLayout>
             <LinearLayout
@@ -70,15 +70,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ع ح"
+                    android:text="@string/ain_haah"
                     android:textSize="30sp"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginStart="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Middle of Throat"
+                    android:text="@string/middle_of_throat"
                     android:textSize="20sp"
-                    android:layout_marginLeft="120dp"/>
+                    android:layout_marginStart="120dp"/>
 
             </LinearLayout>
             <LinearLayout
@@ -89,15 +89,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="غ خ"
+                    android:text="@string/ghain_khaah"
                     android:textSize="30sp"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginStart="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Start of Throat"
+                    android:text="@string/start_of_throat"
                     android:textSize="20sp"
-                    android:layout_marginLeft="120dp"/>
+                    android:layout_marginStart="120dp"/>
 
             </LinearLayout>
             <ImageView
@@ -106,7 +106,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="56dp"
                 android:contentDescription="@string/repoimage"
-                app:srcCompat="@drawable/Halqiyah"
+                app:srcCompat="@drawable/halqiyah"
                 />
 
         </LinearLayout>
