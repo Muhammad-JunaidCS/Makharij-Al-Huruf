@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shajariyah_HaafiyahActivity">
+    tools:context=".TarfiyahActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
                 android:gravity="center"
-                android:text="@string/shajariyah_haafiyah"
+                android:text="@string/Tarfiyah"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
             <LinearLayout
@@ -51,15 +51,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/haah_sheen_yaah"
+                    android:text="@string/laam"
                     android:textSize="30sp"
                     android:layout_marginStart="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tongue_touching_the_ncenter_of_mouth_roof_n"
+                    android:text="@string/rounded_tip_of_tongue_ntouching_the_base_of_nthr_frontal_8_teeth_n"
                     android:textSize="20sp"
-                    android:layout_marginStart="70dp"/>
+                    android:layout_marginStart="150dp"/>
 
             </LinearLayout>
             <LinearLayout
@@ -70,15 +70,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/zuadh"
+                    android:text="@string/nuun"
                     android:textSize="30sp"
                     android:layout_marginStart="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/one_side_of_tongue_ntouching_the_molar_nteeth_n"
+                    android:text="@string/rounded_tip_of_tongue_ntouching_the_base_of_nfrontal_6_teeth_n"
                     android:textSize="20sp"
-                    android:layout_marginStart="125dp"/>
+                    android:layout_marginStart="150dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ray"
+                    android:textSize="30sp"
+                    android:layout_marginStart="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rounded_tip_of_tongue_nand_some_portion_near_nit_touching_the_base_of_nthr_frontal_4_teeth_n"
+                    android:textSize="20sp"
+                    android:layout_marginStart="155dp"/>
+
             </LinearLayout>
             <ImageView
                 android:id="@+id/imageView"
@@ -86,9 +106,11 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="56dp"
                 android:contentDescription="@string/repoimage"
-                app:srcCompat="@drawable/shajariyah_haafiyah"
+                app:srcCompat="@drawable/tarfiyah_learn"
                 />
 
         </LinearLayout>
     </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
