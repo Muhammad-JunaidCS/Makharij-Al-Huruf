@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MakhārijAlHurūf">
         <activity
+            android:name=".PracticeActivity"
+            android:exported="false" />
+        <activity
             android:name=".GhunnaActivity"
             android:exported="false" />
         <activity
