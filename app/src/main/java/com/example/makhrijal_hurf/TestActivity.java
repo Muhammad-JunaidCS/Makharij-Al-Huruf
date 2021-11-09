@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
@@ -16,11 +18,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     Button optionA,optionB,optionC,optionD,nextBut;
     TextView textView,textView1;
     HashMap<Character,String> Halqiyah,Lahatiyah,ShajariyahHaafiyah,Tarfiyah,NitEeyah,Lisaveyah,Ghunna,NoName;
-    HashMap<String,String> NoName1,Answer;
-    int correctOption;
+    HashMap<String,String> NoName1,Answer,TotalQuestion;
+    int correctOption,questionNo;
     public static Stack<String> stack;
     public static final int GREEN=-16711936;
-    int questionNo;
+    ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +53,16 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         optionC.setBackgroundColor(-7829368);
         optionD.setBackgroundColor( -7829368);
 
+        //List will contain all the ans marked by user
+        list=new ArrayList<String>();
 
-
-
-        //populating all hashMaps
         //Answer hashmap will be used to store correct letter and desc
         Answer = new HashMap<String,String>();
+
+        //TotalQuestion hashmap will contain all question and its correct ans
+        TotalQuestion=new HashMap<String,String>();
+
+        //populating all hashMaps
         Halqiyah = new HashMap<Character,String>();
         Halqiyah.put('أ',"End of Throat");
         Halqiyah.put('ہ',"End of Throat");
@@ -109,6 +115,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         NoName1.put("با","Mouth empty space while speaking word");
         NoName1.put("بو","Mouth empty space while speaking word");
         NoName1.put("بى","Mouth empty space while speaking word");
+
         updateQuestion();
     }
 
@@ -117,6 +124,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         if(v.getId()==correctOption)
         {
             findViewById(correctOption).setBackgroundColor(-16711936);//green color
+            Button b=findViewById(correctOption);
+            list.add((String) b.getText());
+            //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
             optionB.setClickable(false);
             optionC.setClickable(false);
@@ -127,6 +137,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         {
             findViewById(v.getId()).setBackgroundColor( -65536);//red color
             findViewById(correctOption).setBackgroundColor(GREEN);//green color
+            Button b=findViewById(v.getId());
+            list.add((String) b.getText());
+            //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
             optionB.setClickable(false);
             optionC.setClickable(false);
@@ -146,7 +159,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
+            Bundle extras = new Bundle();
             Intent intent=new Intent(this,ResultActivity.class);
+            extras.putSerializable("HashMap",TotalQuestion);
+            extras.putStringArrayList("list",list);
+            intent.putExtras(extras);
             startActivity(intent);
         }
 
@@ -171,6 +188,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=Halqiyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 1://selecting Lahatiyah
                 randIndex = rand.nextInt(Lahatiyah.size());
@@ -178,6 +200,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=Lahatiyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 2://selecting ShajariyahHaafiyah
                 randIndex = rand.nextInt(ShajariyahHaafiyah.size());
@@ -185,6 +212,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=ShajariyahHaafiyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 3://selecting Tarfiyah
                 randIndex = rand.nextInt(Tarfiyah.size());
@@ -192,6 +224,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=Tarfiyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 4://selecting NitEeyah
                 randIndex = rand.nextInt(NitEeyah.size());
@@ -199,6 +236,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=NitEeyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 5://selecting Lisaveyah
                 randIndex = rand.nextInt(Lisaveyah.size());
@@ -206,6 +248,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=Lisaveyah.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 6://selecting Ghunna
                 randIndex = rand.nextInt(Ghunna.size());
@@ -213,6 +260,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=Ghunna.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 7://selecting NoName
                 randIndex = rand.nextInt(NoName.size());
@@ -220,6 +272,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=NoName.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             case 8://selecting NoName1
                 randIndex = rand.nextInt(NoName1.size());
@@ -227,6 +284,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 ans=NoName1.get(Key);
                 textView.setText(""+Key);
                 Answer.put(""+Key,ans);
+                if(TotalQuestion.containsKey(""+Key))
+                {
+                    updateQuestion();
+                }
+                TotalQuestion.put(""+Key,ans);
                 break;
             default:
                 randIndex=0;
