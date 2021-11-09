@@ -44,6 +44,9 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         nextBut=findViewById(R.id.nextButton);
         nextBut.setOnClickListener(this);
 
+        //initailizing stack
+        stack=new Stack<String>();
+
         //setting all buttons background
         optionA.setBackgroundColor(-7829368);//gray color
         nextBut.setBackgroundColor(-7829368);
@@ -138,6 +141,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
             optionB.setClickable(true);
             optionC.setClickable(true);
             optionD.setClickable(true);
+            Answer.clear();
+            stack.clear();
             updateQuestion();
         }
 
@@ -238,104 +243,225 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
             case 0:
                 correctOption=optionA.getId();
                 optionA.setText(ans);
-                setOption(optionB);
-                setOption(optionC);
-                setOption(optionD);
+                getOption(optionB);
+                getOption(optionC);
+                getOption(optionD);
                 break;
             case 1:
                 correctOption=optionB.getId();
                 optionB.setText(ans);
-                setOption(optionA);
-                setOption(optionC);
-                setOption(optionD);
+                getOption(optionA);
+                getOption(optionC);
+                getOption(optionD);
                 break;
             case 2:
                 correctOption=optionC.getId();
                 optionC.setText(ans);
-                setOption(optionA);
-                setOption(optionB);
-                setOption(optionD);
+                getOption(optionA);
+                getOption(optionB);
+                getOption(optionD);
                 break;
             case 3:
                 correctOption=optionD.getId();
                 optionD.setText(ans);
-                setOption(optionA);
-                setOption(optionB);
-                setOption(optionC);
+                getOption(optionA);
+                getOption(optionB);
+                getOption(optionC);
         }
     }
-    public void setOption(View button)
+
+    public void getOption(View v)
     {
-        Button b = findViewById(button.getId());
-        String option = getRandomOption();
+        Button b = findViewById(v.getId());
         Object k = Answer.keySet().toArray()[0];
         String ans =Answer.get(k);
-        while(option==ans)
-        {
-            option=getRandomOption();
-        }
-        b.setText(option);
-    }
-    public String getRandomOption()
-    {
         Random rand;
         int randIndex;
         String option;
         Object Key;
-        Object k = Answer.keySet().toArray()[0];
-        String correct = Answer.get(k);
-        rand= new Random();
-        int randHashMAps=rand.nextInt(9);
-        switch(randHashMAps)
+        boolean flag=true;
+        while (flag)
         {
-            case 0://selecting Halqiyah
-                randIndex = rand.nextInt(Halqiyah.size());
-                Key = Halqiyah.keySet().toArray()[randIndex];
-                option=Halqiyah.get(Key);
-                return option;
-            case 1://selecting Lahatiyah
-                randIndex = rand.nextInt(Lahatiyah.size());
-                Key = Lahatiyah.keySet().toArray()[randIndex];
-                option=Lahatiyah.get(Key);
-                return option;
-            case 2://selecting ShajariyahHaafiyah
-                randIndex = rand.nextInt(ShajariyahHaafiyah.size());
-                Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
-                option=ShajariyahHaafiyah.get(Key);
-                return option;
-            case 3://selecting Tarfiyah
-                randIndex = rand.nextInt(Tarfiyah.size());
-                Key = Tarfiyah.keySet().toArray()[randIndex];
-                option=Tarfiyah.get(Key);
-                return option;
-            case 4://selecting NitEeyah
-                randIndex = rand.nextInt(NitEeyah.size());
-                Key = NitEeyah.keySet().toArray()[randIndex];
-                option=NitEeyah.get(Key);
-                return option;
-            case 5://selecting Lisaveyah
-                randIndex = rand.nextInt(Lisaveyah.size());
-                Key = Lisaveyah.keySet().toArray()[randIndex];
-                option=Lisaveyah.get(Key);
-                return option;
-            case 6://selecting Ghunna
-                randIndex = rand.nextInt(Ghunna.size());
-                Key = Ghunna.keySet().toArray()[randIndex];
-                option=Ghunna.get(Key);
-                return option;
-            case 7://selecting NoName
-                randIndex = rand.nextInt(NoName.size());
-                Key = NoName.keySet().toArray()[randIndex];
-                option=NoName.get(Key);
-                return option;
-            case 8://selecting NoName1
-                randIndex = rand.nextInt(NoName1.size());
-                Key = NoName1.keySet().toArray()[randIndex];
-                option=NoName1.get(Key);
-                return option;
-            default:
-                return "";
+            rand= new Random();
+            int randHashMAps=rand.nextInt(9);
+            switch(randHashMAps)
+            {
+                case 0://selecting Halqiyah
+                    randIndex = rand.nextInt(Halqiyah.size());
+                    Key = Halqiyah.keySet().toArray()[randIndex];
+                    option=Halqiyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 1://selecting Lahatiyah
+                    randIndex = rand.nextInt(Lahatiyah.size());
+                    Key = Lahatiyah.keySet().toArray()[randIndex];
+                    option=Lahatiyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 2://selecting ShajariyahHaafiyah
+                    randIndex = rand.nextInt(ShajariyahHaafiyah.size());
+                    Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
+                    option=ShajariyahHaafiyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 3://selecting Tarfiyah
+                    randIndex = rand.nextInt(Tarfiyah.size());
+                    Key = Tarfiyah.keySet().toArray()[randIndex];
+                    option=Tarfiyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 4://selecting NitEeyah
+                    randIndex = rand.nextInt(NitEeyah.size());
+                    Key = NitEeyah.keySet().toArray()[randIndex];
+                    option=NitEeyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 5://selecting Lisaveyah
+                    randIndex = rand.nextInt(Lisaveyah.size());
+                    Key = Lisaveyah.keySet().toArray()[randIndex];
+                    option=Lisaveyah.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 6://selecting Ghunna
+                    randIndex = rand.nextInt(Ghunna.size());
+                    Key = Ghunna.keySet().toArray()[randIndex];
+                    option=Ghunna.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 7://selecting NoName
+                    randIndex = rand.nextInt(NoName.size());
+                    Key = NoName.keySet().toArray()[randIndex];
+                    option=NoName.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+                case 8://selecting NoName1
+                    randIndex = rand.nextInt(NoName1.size());
+                    Key = NoName1.keySet().toArray()[randIndex];
+                    option=NoName1.get(Key);
+                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    {
+                        flag=false;
+                        b.setText(option);
+                        stack.push(option);
+                    }
+                    break;
+            }
         }
 
+
     }
+//    public void setOption(View button)
+//    {
+//        Button b = findViewById(button.getId());
+//        String option = getRandomOption();
+//        Object k = Answer.keySet().toArray()[0];
+//        String ans =Answer.get(k);
+//        while(option==ans)
+//        {
+//            option=getRandomOption();
+//        }
+//        b.setText(option);
+//    }
+//    public String getRandomOption()
+//    {
+//        Random rand;
+//        int randIndex;
+//        String option;
+//        Object Key;
+//        Object k = Answer.keySet().toArray()[0];
+//        String correct = Answer.get(k);
+//        rand= new Random();
+//        int randHashMAps=rand.nextInt(9);
+//        switch(randHashMAps)
+//        {
+//            case 0://selecting Halqiyah
+//                randIndex = rand.nextInt(Halqiyah.size());
+//                Key = Halqiyah.keySet().toArray()[randIndex];
+//                option=Halqiyah.get(Key);
+//                return option;
+//            case 1://selecting Lahatiyah
+//                randIndex = rand.nextInt(Lahatiyah.size());
+//                Key = Lahatiyah.keySet().toArray()[randIndex];
+//                option=Lahatiyah.get(Key);
+//                return option;
+//            case 2://selecting ShajariyahHaafiyah
+//                randIndex = rand.nextInt(ShajariyahHaafiyah.size());
+//                Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
+//                option=ShajariyahHaafiyah.get(Key);
+//                return option;
+//            case 3://selecting Tarfiyah
+//                randIndex = rand.nextInt(Tarfiyah.size());
+//                Key = Tarfiyah.keySet().toArray()[randIndex];
+//                option=Tarfiyah.get(Key);
+//                return option;
+//            case 4://selecting NitEeyah
+//                randIndex = rand.nextInt(NitEeyah.size());
+//                Key = NitEeyah.keySet().toArray()[randIndex];
+//                option=NitEeyah.get(Key);
+//                return option;
+//            case 5://selecting Lisaveyah
+//                randIndex = rand.nextInt(Lisaveyah.size());
+//                Key = Lisaveyah.keySet().toArray()[randIndex];
+//                option=Lisaveyah.get(Key);
+//                return option;
+//            case 6://selecting Ghunna
+//                randIndex = rand.nextInt(Ghunna.size());
+//                Key = Ghunna.keySet().toArray()[randIndex];
+//                option=Ghunna.get(Key);
+//                return option;
+//            case 7://selecting NoName
+//                randIndex = rand.nextInt(NoName.size());
+//                Key = NoName.keySet().toArray()[randIndex];
+//                option=NoName.get(Key);
+//                return option;
+//            case 8://selecting NoName1
+//                randIndex = rand.nextInt(NoName1.size());
+//                Key = NoName1.keySet().toArray()[randIndex];
+//                option=NoName1.get(Key);
+//                return option;
+//            default:
+//                return "";
+//        }
+//
+//    }
 }
