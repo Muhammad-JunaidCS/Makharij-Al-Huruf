@@ -1,5 +1,6 @@
 package com.example.makhrijal_hurf;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,17 +16,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.Stack;
 
 public class PracticeActivity extends AppCompatActivity implements View.OnClickListener{
-    Button optionA,optionB,optionC,optionD;
+    Button optionA,optionB,optionC,optionD,nextBut;
     TextView textView;
     HashMap<Character,String> Halqiyah,Lahatiyah,ShajariyahHaafiyah,Tarfiyah,NitEeyah,Lisaveyah,Ghunna,NoName;
-    HashMap<String,String> NoName1;
-    Random rand;
+    HashMap<String,String> NoName1,Answer;
+    int correctOption;
+    public static Stack<String> stack;
+    public static final int GREEN=-16711936;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
+
         //setting click listener to all buttons
         textView=findViewById(R.id.textView3);
         optionA=findViewById(R.id.optionA);
@@ -35,8 +41,22 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         optionC.setOnClickListener(this);
         optionD=findViewById(R.id.optionD);
         optionD.setOnClickListener(this);
+        nextBut=findViewById(R.id.nextButton);
+        nextBut.setOnClickListener(this);
+
+        //setting all buttons background
+        optionA.setBackgroundColor(-7829368);//gray color
+        nextBut.setBackgroundColor(-7829368);
+        optionB.setBackgroundColor(-7829368);
+        optionC.setBackgroundColor(-7829368);
+        optionD.setBackgroundColor( -7829368);
+
+
+
 
         //populating all hashMaps
+        //Answer hashmap will be used to store correct letter and desc
+        Answer = new HashMap<String,String>();
         Halqiyah = new HashMap<Character,String>();
         Halqiyah.put('أ',"End of Throat");
         Halqiyah.put('ہ',"End of Throat");
@@ -44,6 +64,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         Halqiyah.put('ح',"Middle of throat");
         Halqiyah.put('خ',"Start of throat");
         Halqiyah.put('غ',"Start of throat");
+
+
 
         Lahatiyah= new HashMap<Character,String>();
         Lahatiyah.put('ق',"Base of Tongue which is near Uvula\ntouching the mouth roof");
@@ -87,38 +109,232 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         NoName1.put("با","Mouth empty space while speaking word");
         NoName1.put("بو","Mouth empty space while speaking word");
         NoName1.put("بى","Mouth empty space while speaking word");
-        //updateQuestion();
+        updateQuestion();
     }
 
     @Override
     public void onClick(View v) {
-        updateQuestion();
+        if(v.getId()==correctOption)
+        {
+            findViewById(correctOption).setBackgroundColor(-16711936);//green color
+            optionA.setClickable(false);
+            optionB.setClickable(false);
+            optionC.setClickable(false);
+            optionD.setClickable(false);
+        }
+        else if(v.getId()!=correctOption && (v.getId()==R.id.optionA||v.getId()==R.id.optionB||
+                v.getId()==R.id.optionC||v.getId()==R.id.optionD))
+        {
+            findViewById(v.getId()).setBackgroundColor( -65536);//red color
+            findViewById(correctOption).setBackgroundColor(GREEN);//green color
+            optionA.setClickable(false);
+            optionB.setClickable(false);
+            optionC.setClickable(false);
+            optionD.setClickable(false);
+        }
+        else if(v.getId()==R.id.nextButton)
+        {
+            optionA.setClickable(true);
+            optionB.setClickable(true);
+            optionC.setClickable(true);
+            optionD.setClickable(true);
+            updateQuestion();
+        }
+
     }
     private void updateQuestion()
     {
-        rand = new Random();
-        int randIndex = rand.nextInt(Halqiyah.size());
-        Object Key = Halqiyah.keySet().toArray()[randIndex];
-        Log.d("key",Halqiyah.get(Key));
-        String ans=Halqiyah.get(Key);
-        textView.setText(""+Key);
+        nextBut.setText("NEXT");
+        Random rand;
+        int randHashMAps;
+        int randIndex;
+        int randOption;
+        String ans;
+        Object Key;
+        rand= new Random();
+        randHashMAps=rand.nextInt(9);
+        switch(randHashMAps)
+        {
+            case 0://selecting Halqiyah
+                randIndex = rand.nextInt(Halqiyah.size());
+                Key = Halqiyah.keySet().toArray()[randIndex];
+                ans=Halqiyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 1://selecting Lahatiyah
+                randIndex = rand.nextInt(Lahatiyah.size());
+                Key = Lahatiyah.keySet().toArray()[randIndex];
+                ans=Lahatiyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 2://selecting ShajariyahHaafiyah
+                randIndex = rand.nextInt(ShajariyahHaafiyah.size());
+                Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
+                ans=ShajariyahHaafiyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 3://selecting Tarfiyah
+                randIndex = rand.nextInt(Tarfiyah.size());
+                Key = Tarfiyah.keySet().toArray()[randIndex];
+                ans=Tarfiyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 4://selecting NitEeyah
+                randIndex = rand.nextInt(NitEeyah.size());
+                Key = NitEeyah.keySet().toArray()[randIndex];
+                ans=NitEeyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 5://selecting Lisaveyah
+                randIndex = rand.nextInt(Lisaveyah.size());
+                Key = Lisaveyah.keySet().toArray()[randIndex];
+                ans=Lisaveyah.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 6://selecting Ghunna
+                randIndex = rand.nextInt(Ghunna.size());
+                Key = Ghunna.keySet().toArray()[randIndex];
+                ans=Ghunna.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 7://selecting NoName
+                randIndex = rand.nextInt(NoName.size());
+                Key = NoName.keySet().toArray()[randIndex];
+                ans=NoName.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            case 8://selecting NoName1
+                randIndex = rand.nextInt(NoName1.size());
+                Key = NoName1.keySet().toArray()[randIndex];
+                ans=NoName1.get(Key);
+                textView.setText(""+Key);
+                Answer.put(""+Key,ans);
+                break;
+            default:
+                randIndex=0;
+                randOption=0;
+                ans="";
+                break;
+        }
+
+        optionA.setBackgroundColor(-7829368);//gray color
+        optionB.setBackgroundColor(-7829368);
+        optionC.setBackgroundColor(-7829368);
+        optionD.setBackgroundColor( -7829368);
+
         //show correct answer at random option
-        int randOption =rand.nextInt(4);
-        if(randOption==0)
+        Random rand1 = new Random();
+        randOption =rand1.nextInt(4);
+        switch (randOption)
         {
-            optionA.setText(ans);
+            case 0:
+                correctOption=optionA.getId();
+                optionA.setText(ans);
+                setOption(optionB);
+                setOption(optionC);
+                setOption(optionD);
+                break;
+            case 1:
+                correctOption=optionB.getId();
+                optionB.setText(ans);
+                setOption(optionA);
+                setOption(optionC);
+                setOption(optionD);
+                break;
+            case 2:
+                correctOption=optionC.getId();
+                optionC.setText(ans);
+                setOption(optionA);
+                setOption(optionB);
+                setOption(optionD);
+                break;
+            case 3:
+                correctOption=optionD.getId();
+                optionD.setText(ans);
+                setOption(optionA);
+                setOption(optionB);
+                setOption(optionC);
         }
-        else if(randOption==1)
+    }
+    public void setOption(View button)
+    {
+        Button b = findViewById(button.getId());
+        String option = getRandomOption();
+        Object k = Answer.keySet().toArray()[0];
+        String ans =Answer.get(k);
+        while(option==ans)
         {
-            optionB.setText(ans);
+            option=getRandomOption();
         }
-        else if(randOption==2)
+        b.setText(option);
+    }
+    public String getRandomOption()
+    {
+        Random rand;
+        int randIndex;
+        String option;
+        Object Key;
+        Object k = Answer.keySet().toArray()[0];
+        String correct = Answer.get(k);
+        rand= new Random();
+        int randHashMAps=rand.nextInt(9);
+        switch(randHashMAps)
         {
-            optionC.setText(ans);
-        }
-        else
-        {
-            optionD.setText(ans);
+            case 0://selecting Halqiyah
+                randIndex = rand.nextInt(Halqiyah.size());
+                Key = Halqiyah.keySet().toArray()[randIndex];
+                option=Halqiyah.get(Key);
+                return option;
+            case 1://selecting Lahatiyah
+                randIndex = rand.nextInt(Lahatiyah.size());
+                Key = Lahatiyah.keySet().toArray()[randIndex];
+                option=Lahatiyah.get(Key);
+                return option;
+            case 2://selecting ShajariyahHaafiyah
+                randIndex = rand.nextInt(ShajariyahHaafiyah.size());
+                Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
+                option=ShajariyahHaafiyah.get(Key);
+                return option;
+            case 3://selecting Tarfiyah
+                randIndex = rand.nextInt(Tarfiyah.size());
+                Key = Tarfiyah.keySet().toArray()[randIndex];
+                option=Tarfiyah.get(Key);
+                return option;
+            case 4://selecting NitEeyah
+                randIndex = rand.nextInt(NitEeyah.size());
+                Key = NitEeyah.keySet().toArray()[randIndex];
+                option=NitEeyah.get(Key);
+                return option;
+            case 5://selecting Lisaveyah
+                randIndex = rand.nextInt(Lisaveyah.size());
+                Key = Lisaveyah.keySet().toArray()[randIndex];
+                option=Lisaveyah.get(Key);
+                return option;
+            case 6://selecting Ghunna
+                randIndex = rand.nextInt(Ghunna.size());
+                Key = Ghunna.keySet().toArray()[randIndex];
+                option=Ghunna.get(Key);
+                return option;
+            case 7://selecting NoName
+                randIndex = rand.nextInt(NoName.size());
+                Key = NoName.keySet().toArray()[randIndex];
+                option=NoName.get(Key);
+                return option;
+            case 8://selecting NoName1
+                randIndex = rand.nextInt(NoName1.size());
+                Key = NoName1.keySet().toArray()[randIndex];
+                option=NoName1.get(Key);
+                return option;
+            default:
+                return "";
         }
 
     }
