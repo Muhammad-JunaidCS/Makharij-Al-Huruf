@@ -100,346 +100,535 @@
                     android:layout_marginLeft="10dp"/>
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/letter1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter1"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="70sp"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer1"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"
-                        />
-                    <TextView
-                        android:id="@+id/marked1"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter2"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer2"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked2"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter3"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer3"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked3"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter4"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer4"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked4"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter5"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer5"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked5"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter6"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer6"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked6"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter7"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer7"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked7"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter8"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer8"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked8"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter9"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer9"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked9"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/letter10"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="Letter"
-                    android:textSize="30sp"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/answer10"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp" />
-                    <TextView
-                        android:id="@+id/marked10"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/letter10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Letter"
+                android:textSize="70sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Answer :   "
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/marked10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actual Answer :"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/answer10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

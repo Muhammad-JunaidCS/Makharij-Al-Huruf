@@ -44,6 +44,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         nextBut.setOnClickListener(this);
         textView1=findViewById(R.id.textView5);
 
+        nextBut.setText("NEXT");
+
         //initailizing stack
         stack=new Stack<String>();
 
@@ -152,7 +154,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v.getId()==R.id.nextButton && questionNo <10)
         {
-
+            if(questionNo==9)
+            {
+                nextBut.setText("Finish");
+            }
             optionA.setClickable(true);
             optionB.setClickable(true);
             optionC.setClickable(true);
@@ -178,7 +183,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private void updateQuestion()
     {
         textView1.setText(""+questionNo);
-        nextBut.setText("NEXT");
         Random rand;
         int randHashMAps;
         int randIndex;
