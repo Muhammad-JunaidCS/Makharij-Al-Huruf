@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,11 +19,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     Button optionA,optionB,optionC,optionD,nextBut;
     TextView textView,textView1;
     HashMap<Character,String> Halqiyah,Lahatiyah,ShajariyahHaafiyah,Tarfiyah,NitEeyah,Lisaveyah,Ghunna,NoName;
-    HashMap<String,String> NoName1,Answer,TotalQuestion;
+    HashMap<String,String> NoName1,Answer,TotalQuestion,SolvedQuestion;
     int correctOption,questionNo;
     public static Stack<String> stack;
     public static final int GREEN=-16711936;
-    ArrayList<String> list;
+    //ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +55,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         optionD.setBackgroundColor( -7829368);
 
         //List will contain all the ans marked by user
-        list=new ArrayList<String>();
+        //list=new ArrayList<String>();
 
         //Answer hashmap will be used to store correct letter and desc
         Answer = new HashMap<String,String>();
 
         //TotalQuestion hashmap will contain all question and its correct ans
         TotalQuestion=new HashMap<String,String>();
+        //SolvedQuestion will contain only solve question and their  marked option
+        SolvedQuestion=new HashMap<String,String>();
 
         //populating all hashMaps
         Halqiyah = new HashMap<Character,String>();
@@ -125,7 +128,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         {
             findViewById(correctOption).setBackgroundColor(-16711936);//green color
             Button b=findViewById(correctOption);
-            list.add((String) b.getText());
+            //list.add((String) b.getText());
+            SolvedQuestion.put(""+textView.getText(),(String) b.getText());
             //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
             optionB.setClickable(false);
@@ -138,7 +142,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(v.getId()).setBackgroundColor( -65536);//red color
             findViewById(correctOption).setBackgroundColor(GREEN);//green color
             Button b=findViewById(v.getId());
-            list.add((String) b.getText());
+            //list.add((String) b.getText());
+            SolvedQuestion.put(""+textView.getText(),(String) b.getText());
             //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
             optionB.setClickable(false);
@@ -159,10 +164,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
+            Log.i("Question List Size",""+TotalQuestion.size());
+            Log.i("Solved List Size",""+SolvedQuestion.size());
             Bundle extras = new Bundle();
             Intent intent=new Intent(this,ResultActivity.class);
-            extras.putSerializable("HashMap",TotalQuestion);
-            extras.putStringArrayList("list",list);
+            extras.putSerializable("Questions",TotalQuestion);
+            extras.putSerializable("Solved",SolvedQuestion);
             intent.putExtras(extras);
             startActivity(intent);
         }
