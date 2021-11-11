@@ -4,6 +4,8 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +26,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     HashMap<Character,String> Halqiyah,Lahatiyah,ShajariyahHaafiyah,Tarfiyah,NitEeyah,Lisaveyah,Ghunna,NoName;
     HashMap<String,String> NoName1,Answer;
     int correctOption;
-    public static Stack<String> stack;
+    ArrayList<String> list;
     public static final int GREEN=-16711936;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +46,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         nextBut=findViewById(R.id.nextButton);
         nextBut.setOnClickListener(this);
 
-        //initailizing stack
-        stack=new Stack<String>();
+        //list will handle unique options
+        list=new ArrayList<String>();
 
         //setting all buttons background
         optionA.setBackgroundColor(-7829368);//gray color
@@ -71,48 +73,74 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
 
         Lahatiyah= new HashMap<Character,String>();
-        Lahatiyah.put('ق',"Base of Tongue which is near Uvula\ntouching the mouth roof");
-        Lahatiyah.put('ک',"Portion of Tongue near its base\ntouching the roof of mouth");
+        Lahatiyah.put('ق',"Base of Tongue which is near Uvula touching the mouth roof");
+        Lahatiyah.put('ک',"Portion of Tongue near its base touching the roof of mouth");
 
         ShajariyahHaafiyah=new HashMap<Character,String>();
-        ShajariyahHaafiyah.put('ج',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ش',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ی',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ض',"One side of the tongue\ntouching the molar teeth");
+        ShajariyahHaafiyah.put('ج',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ش',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ی',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ض',"One side of the tongue touching the molar teeth");
 
         Tarfiyah=new HashMap<Character,String>();
-        Tarfiyah.put('ل',"Rounded tip of the tongue touching the\nbase of the frontal 8 teeth");
-        Tarfiyah.put('ن',"Rounded tip of the tongue touching the\nbase of the frontal 6 teeth");
-        Tarfiyah.put('ر',"Rounded tip of the tongue and some\nportion near it touching the base of\nthe frontal 4 teeth");
+        Tarfiyah.put('ل',"Rounded tip of the tongue touching the base of the frontal 8 teeth");
+        Tarfiyah.put('ن',"Rounded tip of the tongue touching the base of the frontal 6 teeth");
+        Tarfiyah.put('ر',"Rounded tip of the tongue and some portion near it touching the base of the frontal 4 teeth");
 
         NitEeyah=new HashMap<Character,String>();
-        NitEeyah.put('ت',"Tip of the tongue touching the base\nof the front 2 teeth");
-        NitEeyah.put('د',"Tip of the tongue touching the base\nof the front 2 teeth");
-        NitEeyah.put('ط',"Tip of the tongue touching the base\nof the front 2 teeth");
+        NitEeyah.put('ت',"Tip of the tongue touching the base of the front 2 teeth");
+        NitEeyah.put('د',"Tip of the tongue touching the base of the front 2 teeth");
+        NitEeyah.put('ط',"Tip of the tongue touching the base of the front 2 teeth");
 
         Lisaveyah=new HashMap<Character,String>();
-        Lisaveyah.put('ظ',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ذ',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ث',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ص',"Tip of the tongue comes between the\nfront top and bottom teeth");
-        Lisaveyah.put('ز',"Tip of the tongue comes between the\nfront top and bottom teeth");
-        Lisaveyah.put('س',"Tip of the tongue comes between the\nfront top and bottom teeth");
+        Lisaveyah.put('ظ',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ذ',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ث',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ص',"Tip of the tongue comes between the front top and bottom teeth");
+        Lisaveyah.put('ز',"Tip of the tongue comes between the front top and bottom teeth");
+        Lisaveyah.put('س',"Tip of the tongue comes between the front top and bottom teeth");
 
         Ghunna=new HashMap<Character,String>();
-        Ghunna.put('م',"While pronouncing the ending sound\nbring the vibration to the nose");
-        Ghunna.put('ن',"While pronouncing the ending sound\nbring the vibration to the nose");
+        Ghunna.put('م',"While pronouncing the ending sound bring the vibration to the nose");
+        Ghunna.put('ن',"While pronouncing the ending sound bring the vibration to the nose");
 
         NoName=new HashMap<Character,String>();
-        NoName.put('ف',"Tip of the two upper jaw teeth touches\nthe inner part of the lower lip");
-        NoName.put('ب',"Inner part of the both lips\ntouch each other");
-        NoName.put('م',"Outer part of both lips touch\neach other");
-        NoName.put('و',"Rounding both lips and not\nclosing the mouth");
+        NoName.put('ف',"Tip of the two upper jaw teeth touches the inner part of the lower lip");
+        NoName.put('ب',"Inner part of the both lips touch each other");
+        NoName.put('م',"Outer part of both lips touch each other");
+        NoName.put('و',"Rounding both lips and not closing the mouth");
 
         NoName1=new HashMap<String,String>();
         NoName1.put("با","Mouth empty space while speaking word");
         NoName1.put("بو","Mouth empty space while speaking word");
         NoName1.put("بى","Mouth empty space while speaking word");
-        updateQuestion();
+
+        if (savedInstanceState!= null)
+        {
+            Answer= (HashMap<String, String>) savedInstanceState.getSerializable("StoreAnswer");
+            Object k;
+            textView.setText(""+Answer.keySet().toArray()[0]);
+            correctOption=savedInstanceState.getInt("CorrectOpt");
+            optionA.setText(savedInstanceState.getString("optA"));
+            optionB.setText(savedInstanceState.getString("optB"));
+            optionC.setText(savedInstanceState.getString("optC"));
+            optionD.setText(savedInstanceState.getString("optD"));
+        }
+        else
+        {
+            updateQuestion();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putSerializable("StoreAnswer",Answer);
+        bundle.putInt("CorrectOpt",correctOption);
+        bundle.putString("optA",""+optionA.getText());
+        bundle.putString("optB",""+optionB.getText());
+        bundle.putString("optC",""+optionC.getText());
+        bundle.putString("optD",""+optionD.getText());
     }
 
     @Override
@@ -142,11 +170,11 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
             optionC.setClickable(true);
             optionD.setClickable(true);
             Answer.clear();
-            stack.clear();
+            list.clear();
             updateQuestion();
         }
-
     }
+
     private void updateQuestion()
     {
         nextBut.setText("NEXT");
@@ -290,99 +318,99 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     randIndex = rand.nextInt(Halqiyah.size());
                     Key = Halqiyah.keySet().toArray()[randIndex];
                     option=Halqiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key &&!list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 1://selecting Lahatiyah
                     randIndex = rand.nextInt(Lahatiyah.size());
                     Key = Lahatiyah.keySet().toArray()[randIndex];
                     option=Lahatiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 2://selecting ShajariyahHaafiyah
                     randIndex = rand.nextInt(ShajariyahHaafiyah.size());
                     Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
                     option=ShajariyahHaafiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 3://selecting Tarfiyah
                     randIndex = rand.nextInt(Tarfiyah.size());
                     Key = Tarfiyah.keySet().toArray()[randIndex];
                     option=Tarfiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 4://selecting NitEeyah
                     randIndex = rand.nextInt(NitEeyah.size());
                     Key = NitEeyah.keySet().toArray()[randIndex];
                     option=NitEeyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 5://selecting Lisaveyah
                     randIndex = rand.nextInt(Lisaveyah.size());
                     Key = Lisaveyah.keySet().toArray()[randIndex];
                     option=Lisaveyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 6://selecting Ghunna
                     randIndex = rand.nextInt(Ghunna.size());
                     Key = Ghunna.keySet().toArray()[randIndex];
                     option=Ghunna.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 7://selecting NoName
                     randIndex = rand.nextInt(NoName.size());
                     Key = NoName.keySet().toArray()[randIndex];
                     option=NoName.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 8://selecting NoName1
                     randIndex = rand.nextInt(NoName1.size());
                     Key = NoName1.keySet().toArray()[randIndex];
                     option=NoName1.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
             }

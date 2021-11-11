@@ -79,49 +79,82 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
 
         Lahatiyah= new HashMap<Character,String>();
-        Lahatiyah.put('ق',"Base of Tongue which is near Uvula\ntouching the mouth roof");
-        Lahatiyah.put('ک',"Portion of Tongue near its base\ntouching the roof of mouth");
+        Lahatiyah.put('ق',"Base of Tongue which is near Uvula touching the mouth roof");
+        Lahatiyah.put('ک',"Portion of Tongue near its base touching the roof of mouth");
 
         ShajariyahHaafiyah=new HashMap<Character,String>();
-        ShajariyahHaafiyah.put('ج',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ش',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ی',"Tongue touching the center\nof the mouth roof");
-        ShajariyahHaafiyah.put('ض',"One side of the tongue\ntouching the molar teeth");
+        ShajariyahHaafiyah.put('ج',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ش',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ی',"Tongue touching the center of the mouth roof");
+        ShajariyahHaafiyah.put('ض',"One side of the tongue touching the molar teeth");
 
         Tarfiyah=new HashMap<Character,String>();
-        Tarfiyah.put('ل',"Rounded tip of the tongue touching the\nbase of the frontal 8 teeth");
-        Tarfiyah.put('ن',"Rounded tip of the tongue touching the\nbase of the frontal 6 teeth");
-        Tarfiyah.put('ر',"Rounded tip of the tongue and some\nportion near it touching the base of\nthe frontal 4 teeth");
+        Tarfiyah.put('ل',"Rounded tip of the tongue touching the base of the frontal 8 teeth");
+        Tarfiyah.put('ن',"Rounded tip of the tongue touching the base of the frontal 6 teeth");
+        Tarfiyah.put('ر',"Rounded tip of the tongue and some portion near it touching the base of\nthe frontal 4 teeth");
 
         NitEeyah=new HashMap<Character,String>();
-        NitEeyah.put('ت',"Tip of the tongue touching the base\nof the front 2 teeth");
-        NitEeyah.put('د',"Tip of the tongue touching the base\nof the front 2 teeth");
-        NitEeyah.put('ط',"Tip of the tongue touching the base\nof the front 2 teeth");
+        NitEeyah.put('ت',"Tip of the tongue touching the base of the front 2 teeth");
+        NitEeyah.put('د',"Tip of the tongue touching the base of the front 2 teeth");
+        NitEeyah.put('ط',"Tip of the tongue touching the base of the front 2 teeth");
 
         Lisaveyah=new HashMap<Character,String>();
-        Lisaveyah.put('ظ',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ذ',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ث',"Tip of the tongue touching the tip\nof the frontal 2 teeth");
-        Lisaveyah.put('ص',"Tip of the tongue comes between the\nfront top and bottom teeth");
-        Lisaveyah.put('ز',"Tip of the tongue comes between the\nfront top and bottom teeth");
-        Lisaveyah.put('س',"Tip of the tongue comes between the\nfront top and bottom teeth");
+        Lisaveyah.put('ظ',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ذ',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ث',"Tip of the tongue touching the tip of the frontal 2 teeth");
+        Lisaveyah.put('ص',"Tip of the tongue comes between the front top and bottom teeth");
+        Lisaveyah.put('ز',"Tip of the tongue comes between the front top and bottom teeth");
+        Lisaveyah.put('س',"Tip of the tongue comes between the front top and bottom teeth");
 
         Ghunna=new HashMap<Character,String>();
-        Ghunna.put('م',"While pronouncing the ending sound\nbring the vibration to the nose");
-        Ghunna.put('ن',"While pronouncing the ending sound\nbring the vibration to the nose");
+        Ghunna.put('م',"While pronouncing the ending sound bring the vibration to the nose");
+        Ghunna.put('ن',"While pronouncing the ending sound bring the vibration to the nose");
 
         NoName=new HashMap<Character,String>();
-        NoName.put('ف',"Tip of the two upper jaw teeth touches\nthe inner part of the lower lip");
-        NoName.put('ب',"Inner part of the both lips\ntouch each other");
-        NoName.put('م',"Outer part of both lips touch\neach other");
-        NoName.put('و',"Rounding both lips and not\nclosing the mouth");
+        NoName.put('ف',"Tip of the two upper jaw teeth touches the inner part of the lower lip");
+        NoName.put('ب',"Inner part of the both lips touch each other");
+        NoName.put('م',"Outer part of both lips touch each other");
+        NoName.put('و',"Rounding both lips and not closing the mouth");
 
         NoName1=new HashMap<String,String>();
         NoName1.put("با","Mouth empty space while speaking word");
         NoName1.put("بو","Mouth empty space while speaking word");
         NoName1.put("بى","Mouth empty space while speaking word");
 
-        updateQuestion();
+        if (savedInstanceState!= null)
+        {
+            Answer= (HashMap<String, String>) savedInstanceState.getSerializable("StoreAnswer");
+            Object k;
+            textView.setText(""+Answer.keySet().toArray()[0]);
+            TotalQuestion=(HashMap<String, String>) savedInstanceState.getSerializable("TotalQuest");
+            SolvedQuestion=(HashMap<String, String>) savedInstanceState.getSerializable("SolvedQuest");
+
+            correctOption=savedInstanceState.getInt("CorrectOpt");
+            optionA.setText(savedInstanceState.getString("optA"));
+            optionB.setText(savedInstanceState.getString("optB"));
+            optionC.setText(savedInstanceState.getString("optC"));
+            optionD.setText(savedInstanceState.getString("optD"));
+            questionNo=savedInstanceState.getInt("QuestNo");
+            textView1.setText(""+questionNo);
+        }
+        else
+        {
+            updateQuestion();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putSerializable("StoreAnswer",Answer);
+        bundle.putSerializable("TotalQuest",TotalQuestion);
+        bundle.putSerializable("SolvedQuest",SolvedQuestion);
+        bundle.putInt("QuestNo",questionNo);
+        bundle.putInt("CorrectOpt",correctOption);
+        bundle.putString("optA",""+optionA.getText());
+        bundle.putString("optB",""+optionB.getText());
+        bundle.putString("optC",""+optionC.getText());
+        bundle.putString("optD",""+optionD.getText());
     }
 
     @Override

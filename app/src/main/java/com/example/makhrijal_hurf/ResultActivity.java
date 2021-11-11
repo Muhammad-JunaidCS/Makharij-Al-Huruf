@@ -3,19 +3,23 @@ package com.example.makhrijal_hurf;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements View.OnClickListener{
     HashMap<String,String> TotalQuestions,SolvedQuestions;
    // ArrayList<String> list;
     TextView question,wrong,score,letter1,letter2,letter3,letter4,letter5,letter6,letter7,letter8,
             letter9,letter10,answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,
     answer9,answer10,marked1,marked2,marked3,marked4,marked5,marked6,marked7,marked8,marked9,marked10,attempt;
+    Button share;
     int totalCorrect,totalWrong,totalAttampt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,10 @@ public class ResultActivity extends AppCompatActivity {
         totalAttampt=0;
         totalWrong=0;
         totalCorrect=0;
+
+        //binding button
+        share=findViewById(R.id.share);
+        share.setOnClickListener(this);
 
         //binding of all text Views
         question=findViewById(R.id.question);
@@ -162,5 +170,27 @@ public class ResultActivity extends AppCompatActivity {
         question.setText(""+TotalQuestions.size());
         wrong.setText(""+totalWrong);
         score.setText(""+totalCorrect);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Intent intent = new Intent(this,HomeActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.share)
+        {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            String send="I attempted "+attempt.getText()+" out of 10 questions from which "+wrong.getText()+" were wrong and got score of "+score.getText()+" in Makhārij-al-Hurūf App";
+            sendIntent.putExtra(Intent.EXTRA_TEXT, send);
+            sendIntent.setType("text/plain");
+
+            Intent shareIntent = Intent.createChooser(sendIntent, null);
+            startActivity(shareIntent);
+        }
     }
 }

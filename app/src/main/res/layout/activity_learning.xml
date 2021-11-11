@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/halqiyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:text="@string/halqiyah"
@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/lahatiyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/lahatiyah"
@@ -30,7 +30,7 @@
 
     <Button
         android:id="@+id/haafiyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/shajariyah_haafiyah"
@@ -41,7 +41,7 @@
 
     <Button
         android:id="@+id/tarfiyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/tarfiyah"
@@ -52,7 +52,7 @@
 
     <Button
         android:id="@+id/niteeyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/nit_eeyah"
@@ -63,7 +63,7 @@
 
     <Button
         android:id="@+id/lisaveyah"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/lisaveyah"
@@ -74,7 +74,7 @@
 
     <Button
         android:id="@+id/ghunna"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/ghunna"

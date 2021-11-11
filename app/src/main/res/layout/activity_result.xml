@@ -628,8 +628,16 @@
                     android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"/>
-
             </LinearLayout>
+            <Button
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Share"
+                android:textSize="25sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
