@@ -21,9 +21,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     HashMap<Character,String> Halqiyah,Lahatiyah,ShajariyahHaafiyah,Tarfiyah,NitEeyah,Lisaveyah,Ghunna,NoName;
     HashMap<String,String> NoName1,Answer,TotalQuestion,SolvedQuestion;
     int correctOption,questionNo;
-    public static Stack<String> stack;
+  //  public static Stack<String> stack;
     public static final int GREEN=-16711936;
-    //ArrayList<String> list;
+    ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
         nextBut.setText("NEXT");
 
-        //initailizing stack
-        stack=new Stack<String>();
+        //list to main unique options
+        list=new ArrayList<String>();
 
         //setting all buttons background
         optionA.setBackgroundColor(-7829368);//gray color
@@ -167,7 +167,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         {
             findViewById(correctOption).setBackgroundColor(-16711936);//green color
             Button b=findViewById(correctOption);
-            //list.add((String) b.getText());
+           // list.add((String) b.getText());
             SolvedQuestion.put(""+textView.getText(),(String) b.getText());
             //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
@@ -181,7 +181,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(v.getId()).setBackgroundColor( -65536);//red color
             findViewById(correctOption).setBackgroundColor(GREEN);//green color
             Button b=findViewById(v.getId());
-            //list.add((String) b.getText());
+           // list.add((String) b.getText());
             SolvedQuestion.put(""+textView.getText(),(String) b.getText());
             //TotalQuestion.put(""+textView.getText(),(String) b.getText());
             optionA.setClickable(false);
@@ -200,12 +200,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             optionC.setClickable(true);
             optionD.setClickable(true);
             Answer.clear();
-            stack.clear();
+            list.clear();
             questionNo++;
             updateQuestion();
         }
         else
         {
+            Answer.clear();
+            list.clear();
+            questionNo++;
             Log.i("Question List Size",""+TotalQuestion.size());
             Log.i("Solved List Size",""+SolvedQuestion.size());
             Bundle extras = new Bundle();
@@ -405,99 +408,99 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     randIndex = rand.nextInt(Halqiyah.size());
                     Key = Halqiyah.keySet().toArray()[randIndex];
                     option=Halqiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 1://selecting Lahatiyah
                     randIndex = rand.nextInt(Lahatiyah.size());
                     Key = Lahatiyah.keySet().toArray()[randIndex];
                     option=Lahatiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 2://selecting ShajariyahHaafiyah
                     randIndex = rand.nextInt(ShajariyahHaafiyah.size());
                     Key = ShajariyahHaafiyah.keySet().toArray()[randIndex];
                     option=ShajariyahHaafiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 3://selecting Tarfiyah
                     randIndex = rand.nextInt(Tarfiyah.size());
                     Key = Tarfiyah.keySet().toArray()[randIndex];
                     option=Tarfiyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 4://selecting NitEeyah
                     randIndex = rand.nextInt(NitEeyah.size());
                     Key = NitEeyah.keySet().toArray()[randIndex];
                     option=NitEeyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 5://selecting Lisaveyah
                     randIndex = rand.nextInt(Lisaveyah.size());
                     Key = Lisaveyah.keySet().toArray()[randIndex];
                     option=Lisaveyah.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 6://selecting Ghunna
                     randIndex = rand.nextInt(Ghunna.size());
                     Key = Ghunna.keySet().toArray()[randIndex];
                     option=Ghunna.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 7://selecting NoName
                     randIndex = rand.nextInt(NoName.size());
                     Key = NoName.keySet().toArray()[randIndex];
                     option=NoName.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
                 case 8://selecting NoName1
                     randIndex = rand.nextInt(NoName1.size());
                     Key = NoName1.keySet().toArray()[randIndex];
                     option=NoName1.get(Key);
-                    if(!ans.equals(option) && k!=Key && !stack.contains(option) )
+                    if(!ans.equals(option) && k!=Key && !list.contains(option) )
                     {
                         flag=false;
                         b.setText(option);
-                        stack.push(option);
+                        list.add(option);
                     }
                     break;
             }

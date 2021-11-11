@@ -91,9 +91,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         //Showing mcqs data
         Object key;
         String ans;
-        String marked="";
         for(int i=0;i<10;i++)
         {
+            String marked="";
             key=TotalQuestions.keySet().toArray()[i];
             ans=TotalQuestions.get(key);
             if(SolvedQuestions.containsKey(key))
