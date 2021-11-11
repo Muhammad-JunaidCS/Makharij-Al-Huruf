@@ -173,13 +173,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Intent intent = new Intent(this,HomeActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
     public void onClick(View v) {
         if(v.getId()==R.id.share)
         {

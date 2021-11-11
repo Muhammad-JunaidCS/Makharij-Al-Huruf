@@ -135,6 +135,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             optionC.setText(savedInstanceState.getString("optC"));
             optionD.setText(savedInstanceState.getString("optD"));
             questionNo=savedInstanceState.getInt("QuestNo");
+            if(questionNo==10)
+            {
+                nextBut.setText("Finish");
+            }
             textView1.setText(""+questionNo);
         }
         else
