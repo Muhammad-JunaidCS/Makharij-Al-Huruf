@@ -1,5 +1,6 @@
 package com.example.makhrijal_hurf;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -48,6 +49,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
         //list to main unique options
         list=new ArrayList<String>();
+
+        //back arrow
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //setting all buttons background
         optionA.setBackgroundColor(-7829368);//gray color

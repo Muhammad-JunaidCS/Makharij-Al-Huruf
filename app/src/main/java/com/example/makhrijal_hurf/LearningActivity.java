@@ -1,5 +1,6 @@
 package com.example.makhrijal_hurf;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -27,6 +28,10 @@ public class LearningActivity extends AppCompatActivity implements View.OnClickL
         lisaveyehButton.setOnClickListener(this);
         ghunnaButton=findViewById(R.id.ghunna);
         ghunnaButton.setOnClickListener(this);
+
+        //back arrow
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
     @Override
     public void onClick(View v) {

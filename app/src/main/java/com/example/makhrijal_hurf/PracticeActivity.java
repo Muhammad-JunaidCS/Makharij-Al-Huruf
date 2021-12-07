@@ -1,6 +1,7 @@
 package com.example.makhrijal_hurf;
 
 import androidx.annotation.ColorInt;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,6 +46,10 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         optionD.setOnClickListener(this);
         nextBut=findViewById(R.id.nextButton);
         nextBut.setOnClickListener(this);
+
+        //back arrow
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //list will handle unique options
         list=new ArrayList<String>();

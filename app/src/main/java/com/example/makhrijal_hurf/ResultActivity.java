@@ -1,5 +1,6 @@
 package com.example.makhrijal_hurf;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +30,10 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         totalAttampt=0;
         totalWrong=0;
         totalCorrect=0;
+
+        //back arrow
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //binding button
         share=findViewById(R.id.share);
