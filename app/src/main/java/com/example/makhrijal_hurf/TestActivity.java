@@ -361,6 +361,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             case 0:
                 correctOption=optionA.getId();
                 optionA.setText(ans);
+                list.add(ans);
                 getOption(optionB);
                 getOption(optionC);
                 getOption(optionD);
@@ -368,6 +369,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             case 1:
                 correctOption=optionB.getId();
                 optionB.setText(ans);
+                list.add(ans);
                 getOption(optionA);
                 getOption(optionC);
                 getOption(optionD);
@@ -375,6 +377,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             case 2:
                 correctOption=optionC.getId();
                 optionC.setText(ans);
+                list.add(ans);
                 getOption(optionA);
                 getOption(optionB);
                 getOption(optionD);
@@ -382,6 +385,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             case 3:
                 correctOption=optionD.getId();
                 optionD.setText(ans);
+                list.add(ans);
                 getOption(optionA);
                 getOption(optionB);
                 getOption(optionC);
