@@ -5,639 +5,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
-    <ScrollView
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name" />
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="60dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Report"-->
+<!--                android:textSize="50sp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Total Questions :"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/question"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="0"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Attempted :"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/attempt"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="0"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Wrong :"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/wrong"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="0"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Score :"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/score"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="0"-->
+<!--                    android:textSize="30sp" />-->
+
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Report"
-                android:textSize="50sp"
-                android:gravity="center"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Questions :"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Attempted :"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/attempt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wrong :"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/wrong"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Score :"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:layout_marginLeft="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/letter10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Letter"
-                android:textSize="70sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Answer :   "
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/marked10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Actual Answer :"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/answer10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"/>
-            </LinearLayout>
-            <Button
-                android:id="@+id/share"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Share"
-                android:textSize="25sp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"/>
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

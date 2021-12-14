@@ -11,6 +11,7 @@
         android:theme="@style/Theme.MakhārijAlHurūf">
         <activity
             android:name=".ResultActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
