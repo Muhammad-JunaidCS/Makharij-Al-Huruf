@@ -20,7 +20,7 @@ import java.util.List;
 public class ResultActivity extends AppCompatActivity{
     HashMap<String,String> TotalQuestions,SolvedQuestions;
     Toolbar toolbar;
-   // ArrayList<String> list;
+    // ArrayList<String> list;
 //    TextView question,wrong,score,attempt;
     int totalCorrect,totalWrong,totalAttampt;
     List<Question> questionList=new ArrayList<>();
